@@ -1,0 +1,44 @@
+<table class="table table-striped">
+  <h2>ユーザー情報</h2>
+  <table class="table">
+    <thead>
+      　<tr>
+        <!-- 画像組み込む -->image
+        </tr>
+        <tr>
+          <th>名前</th>
+          <th>
+             <%= user.name %>
+          </th>
+        </tr>
+        <tr>
+          <th>自己紹介</th>
+          <th>
+            <%= user.introduction %>
+          </th>
+        </tr>
+    </thead>
+  </table>
+
+  <div>
+    <p>
+      <%= link_to 'ユーザー情報変更', edit_user_path(user), class: "btn btn-default" %>
+    </p>
+  </div>
+
+  <h2>NEW memo</h2>
+  <%= form_for(@newmemo, url: memo_path) do |f| %>
+
+    <p>カテゴリー</p>
+    <%= f.text_field :category %>
+
+    <p>タイトル</p>
+    <%= f.text_field :title %>
+
+    <p>内容詳細</p>
+    <%= f.text_area :body %>
+
+    <br><%= f.submit 'Create Book' %></br>
+  <% end %>
+</table>
+
