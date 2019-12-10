@@ -1,1 +1,37 @@
-<h1>Users index画面</h1>
+<%= render 'headfoot/header' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <%= render 'memos/new', user: current_user %>
+    </div>
+
+    <div class="col-xs-8">
+      <h2>登録ユーザー一覧</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ユーザー画像</th>
+            <th>お名前</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td></td>
+              <td>
+                <%= user.name %>
+                </td>
+              <td>
+                <%= link_to "詳細", user_path(user.id) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= render 'headfoot/footer' %>
+</div>

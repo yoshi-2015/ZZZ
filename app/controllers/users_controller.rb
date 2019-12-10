@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def index
+    @newmemo = Memo.new
+    @users = User.all
   end
 
   def show
