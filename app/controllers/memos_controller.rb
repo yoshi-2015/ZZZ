@@ -9,12 +9,18 @@ class MemosController < ApplicationController
       redirect_to memo_path(@newmemo)
     else
       render :index
+    end
   end
 
   def index
+    @newmemo = Memo.new
+    @memos = Memo.all
   end
 
   def show
+    @newmemo = Memo.new
+    @memo = Memo.find(params[:id])
+    @user = @memo.user
   end
 
   def edit

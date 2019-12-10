@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @newmemo = Memo.new
     @user = User.find(params[:id])
+    @memos = @user.memos
   end
 
   def edit

@@ -26,8 +26,8 @@
     </p>
   </div>
 
-  <h2>NEW memo</h2>
-  <%= form_for(@newmemo, url: memo_path) do |f| %>
+  <h2>stady memo</h2>
+  <%= form_for(@newmemo, url: memos_path) do |f| %>
 
     <p>カテゴリー</p>
     <%= f.text_field :category %>
@@ -41,4 +41,3 @@
     <br><%= f.submit 'Create Book' %></br>
   <% end %>
 </table>
-

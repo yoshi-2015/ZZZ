@@ -7,7 +7,34 @@
     </div>
 
     <div class="col-xs-8">
-      
+      <h2>user投稿一覧</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Body</th>
+          </tr>
+        </thead>
+
+        <tbody>
+           <% @memos.each do |memo| %>
+            <tr>
+              <td></td>
+              <td>
+                 <%= memo.category %>
+                </td>
+              <td>
+                 <%= memo.title %>
+                </td>
+              <td>
+                 <%= memo.body %>
+           <% end %>
+                </td>
+            </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <%= render 'headfoot/footer' %>

@@ -1,1 +1,39 @@
-<h1>Memos show画面</h1>
+<%= render 'headfoot/header' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <%= render 'memos/new', user:@user %>
+    </div>
+
+    <div class="col-xs-8">
+      <h2>ユーザー投稿詳細</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Body</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td></td>
+            <td><%= @memo.category %></td>
+            <td><%= @memo.title %></td>
+            <td><%= @memo.body %></td>
+            <td>
+              <% if @memo.user == current_user %>
+                <%= link_to "edit", edit_memo_path(@memo) %>
+                <%= link_to "delete", memo_path, method: :delete, "data-confirm" => "本当に削除しますか？" %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= render 'headfoot/footer' %>
+</div>
