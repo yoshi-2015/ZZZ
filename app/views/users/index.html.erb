@@ -20,7 +20,9 @@
         <tbody>
           <% @users.each do |user| %>
             <tr>
-              <td></td>
+              <td>
+                <%= attachment_image_tag user,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %>
+              </td>
               <td>
                 <%= user.name %>
                 </td>

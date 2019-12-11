@@ -1,1 +1,28 @@
-<h1>Memos edit画面</h1>
+<%= render 'books/header' %>
+
+<h2>Memo 編集画面</h2>
+<% if @memo.errors.any? %>
+  <h2><%= @memo.errors.count %> errors prohibited this memo from being saved:</h2>
+
+  <ul>
+  <% @memo.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@memo) do |memo| %>
+  <p>Category</p>
+  <%= memo.text_field :category %>
+
+  <p>Title</p>
+  <%= memo.text_field :title %>
+
+  <p>Body</p>
+  <%= memo.text_field :body %>
+
+  <br><%= f.submit 'Update Memo' %></br>
+<% end %>
+
+
+<%= render 'headfoot/footer' %>

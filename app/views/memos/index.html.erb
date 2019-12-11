@@ -1,5 +1,21 @@
 <%= render 'headfoot/header' %>
 
+<% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if @newmemo.errors.any? %>
+      <h2><%= @newmemo.errors.count %> errors prohibited this memo from being saved:</h2>
+
+      <ul>
+      <% @newmemo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+<% end %>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
@@ -26,7 +42,9 @@
                 <%= book.category %>
               </td>
               <td>
-                <%= book.title %>
+                <%= link_to memo_path(book.id) do %>
+                  <%= book.title %>
+                <% end %>
               </td>
               <td>
                 <%= book.body %>

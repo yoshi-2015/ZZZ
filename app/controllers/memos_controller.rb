@@ -6,6 +6,7 @@ class MemosController < ApplicationController
     @newmemo = Memo.new(memo_params)
     @newmemo.user_id = current_user.id
     if @newmemo.save
+      flash[:notice] = "新規登録しました！"
       redirect_to memo_path(@newmemo)
     else
       render :index
@@ -24,8 +25,21 @@ class MemosController < ApplicationController
   end
 
   def edit
+    @memo = Memo.find(params[:id])
+    if @memo.user_id != current_user.id
+      redirect_to memos_path
+    else
+      render :edit
+    end
   end
   def update
+    @memo = Memo.find(params[:id])
+    if @memo.update(memo_params)
+      flash[:notice] = "編集完了しました！Book was successfully updated."
+      redirect_to memo_path(@memo)
+    else
+      render :edit
+    end
   end
 
   private
