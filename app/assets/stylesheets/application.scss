@@ -22,23 +22,26 @@
 
   .image1 {
   background-image: url(test1.jpg);
-  background-size:contain;
   }
   .image2 {
   background-image: url(test2.jpg);
-  background-size:contain;
   }
   .image3 {
   background-image: url(test3.jpg);
-  background-size:contain;
   }
   .image4 {
   background-image: url(test4.jpg);
-  background-size:contain;
+  }
+  .image5 {
+  background-image: url(test5.jpg);
+  }
+
+  .top {
+  text-align: center;
   }
 
   #container{
-    height: 525px;
+    height: 400px;
   }
 
   .nav {
@@ -50,7 +53,7 @@
     height: 120px;
 
     text-align: center;
-    margin: 1px auto;
+    margin: 0 auto;
     padding: 40px;
 
     font-size: 15px;
