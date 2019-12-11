@@ -15,43 +15,43 @@
         <% if user_signed_in? %>
           <li class="">
             <%= link_to user_path(current_user.id) do %>
-              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>HOME
             <% end %>
           </li>
             <li class="">
               <%= link_to users_path do %>
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>Users
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>ユーザー一覧
               <% end %>
           </li>
           <li class="">
             <%= link_to memos_path do %>
-              <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Memos
+              <span class="glyphicon glyphicon-book" aria-hidden="true"></span>投稿一覧
             <% end %>
           </li>
           <li class="">
             <%= link_to destroy_user_session_path, method: :delete do %>
-              <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>logout
+              <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>ログアウト
             <% end %>
           </li>
         <% else %>
           <li class="">
             <%= link_to root_path do %>
-              <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME
             <% end %>
           </li>
           <li class="">
             <%= link_to about_path do %>
-              <span class="glyphicon glyphicon-link" aria-hidden="true"></span> About
+              <span class="glyphicon glyphicon-link" aria-hidden="true"></span> サイト紹介
             <% end %>
           </li>
           <li class="">
             <%= link_to new_user_registration_path do %>
-              <span class="glyphicon glyphicon-check" aria-hidden="true"></span> sign up
+              <span class="glyphicon glyphicon-check" aria-hidden="true"></span> 新規登録
             <% end %>
           </li>
           <li class="">
             <%= link_to new_user_session_path do %>
-              <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  login
+              <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  ログイン
             <% end %>
           </li>
         <% end %>

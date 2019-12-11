@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      memo: メモ
+    attributes:
+      memo:
+        category: カテゴリー
+        title: タイトル
+        body: 内容詳細

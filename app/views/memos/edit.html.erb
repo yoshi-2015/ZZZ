@@ -1,4 +1,4 @@
-<%= render 'books/header' %>
+<%= render 'headfoot/header' %>
 
 <h2>Memo 編集画面</h2>
 <% if @memo.errors.any? %>
@@ -12,16 +12,16 @@
 <% end %>
 
 <%= form_for(@memo) do |memo| %>
-  <p>Category</p>
+  <p>カテゴリー</p>
   <%= memo.text_field :category %>
 
-  <p>Title</p>
+  <p>タイトル</p>
   <%= memo.text_field :title %>
 
-  <p>Body</p>
+  <p>内容詳細</p>
   <%= memo.text_field :body %>
 
-  <br><%= f.submit 'Update Memo' %></br>
+  <br><%= memo.submit 'Update Memo' %></br>
 <% end %>
 
 

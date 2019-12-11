@@ -1,4 +1,5 @@
 class MemosController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :show, :edit]
   def new
     @newmemo = Memo.new
   end
@@ -9,6 +10,7 @@ class MemosController < ApplicationController
       flash[:notice] = "新規登録しました！"
       redirect_to memo_path(@newmemo)
     else
+      @memos = Memo.all
       render :index
     end
   end
@@ -35,11 +37,18 @@ class MemosController < ApplicationController
   def update
     @memo = Memo.find(params[:id])
     if @memo.update(memo_params)
-      flash[:notice] = "編集完了しました！Book was successfully updated."
+      flash[:notice] = "編集しました！"
       redirect_to memo_path(@memo)
     else
       render :edit
     end
+  end
+
+  def destroy
+    @memo = Memo.find(params[:id])
+    @memo.destroy
+    flash[:notice] = "削除しました！"
+    redirect_to memos_path
   end
 
   private

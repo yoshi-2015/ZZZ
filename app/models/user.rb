@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :memos ,dependent: :destroy
   attachment :profile_image
+  validates :name, presence: true, length: { in: 1..15 }
+  validates :introduction, length: { maximum: 50 }
 end
