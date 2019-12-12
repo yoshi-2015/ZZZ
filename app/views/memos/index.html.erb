@@ -31,23 +31,27 @@
             <th>カテゴリー</th>
             <th>タイトル</th>
             <th>内容詳細</th>
+            <th>イイね！</th>
           </tr>
         </thead>
 
         <tbody>
-          <% @memos.each do |book| %>
+          <% @memos.each do |memo| %>
             <tr>
               <td></td>
               <td>
-                <%= book.category %>
+                <%= memo.category %>
               </td>
               <td>
-                <%= link_to memo_path(book.id) do %>
-                  <%= book.title %>
+                <%= link_to memo_path(memo.id) do %>
+                  <%= memo.title %>
                 <% end %>
               </td>
               <td>
-                <%= book.body %>
+                <%= memo.body %>
+              </td>
+              <td>
+                <%= memo.favorites.count %> イイね！
               </td>
             </tr>
           <% end %>

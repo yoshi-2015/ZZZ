@@ -20,6 +20,7 @@
             <th>カテゴリー</th>
             <th>タイトル</th>
             <th>内容詳細</th>
+            <th>イイね！</th>
           </tr>
         </thead>
 
@@ -36,7 +37,10 @@
                 </td>
               <td>
                  <%= memo.body %>
-                </td>
+              </td>
+              <td>
+                <%= memo.favorites.count %> イイね！
+              </td>
             </tr>
           <% end %>
         </tbody>

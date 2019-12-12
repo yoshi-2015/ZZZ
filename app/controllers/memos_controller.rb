@@ -24,6 +24,7 @@ class MemosController < ApplicationController
     @newmemo = Memo.new
     @memo = Memo.find(params[:id])
     @user = @memo.user
+    @memo_comment = MemoComment.new
   end
 
   def edit
@@ -53,6 +54,6 @@ class MemosController < ApplicationController
 
   private
   def memo_params
-    params.require(:memo).permit(:category, :title, :body)
+    params.require(:memo).permit(:category, :title, :body ,:user_id)
   end
 end

@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   # root 'users#show'
   resources :users
-  resources :memos
+  resources :memos do
+    resource :memo_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
+  end
   resources :homes, only: [:top ,:show]
   root to: 'homes#top'
   get '/home/about' => 'homes#show', as: :about

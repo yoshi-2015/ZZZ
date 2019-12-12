@@ -1,28 +1,30 @@
 <%= render 'headfoot/header' %>
 
-<h2>Memo 編集画面</h2>
-<% if @memo.errors.any? %>
-  <h2><%= @memo.errors.count %> errors prohibited this memo from being saved:</h2>
+<div class="container">
+  <div class="row">
+    <h2>Memo 編集画面</h2>
+    <% if @memo.errors.any? %>
+      <h2><%= @memo.errors.count %> errors prohibited this memo from being saved:</h2>
 
-  <ul>
-  <% @memo.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-  <% end %>
-  </ul>
-<% end %>
+      <ul>
+      <% @memo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    <% end %>
 
-<%= form_for(@memo) do |memo| %>
-  <p>カテゴリー</p>
-  <%= memo.text_field :category %>
+    <%= form_for(@memo) do |memo| %>
+      <p>カテゴリー</p>
+      <%= memo.text_field :category %>
 
-  <p>タイトル</p>
-  <%= memo.text_field :title %>
+      <p>タイトル</p>
+      <%= memo.text_field :title %>
 
-  <p>内容詳細</p>
-  <%= memo.text_field :body %>
+      <p>内容詳細</p>
+      <%= memo.text_field :body %>
 
-  <br><%= memo.submit 'Update Memo' %></br>
-<% end %>
-
-
-<%= render 'headfoot/footer' %>
+      <br><%= memo.submit 'Update Memo' %></br>
+    <% end %>
+  </div>
+  <%= render 'headfoot/footer' %>
+</div>

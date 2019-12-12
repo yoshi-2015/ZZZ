@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
@@ -41,3 +40,6 @@ $(document).ready(function () {
       hidePrevious : false
   });
 });
+
+//// = require turbolink s
+//// application.html.erb

@@ -5,4 +5,7 @@ ja:
     attributes:
       user:
         name: 名前
+        email: e-mail
         introdaction: 自己紹介
+        password: パスワード
+        password_confirmation: パスワード確認
