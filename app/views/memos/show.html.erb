@@ -63,7 +63,7 @@
         <tbody>
           <% @memo.memo_comments.each do |memo_comment| %>
             <tr>
-              <td><%= attachment_image_tag memo_comment.user ,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg" %></td>
+              <td><%= attachment_image_tag memo_comment.user ,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %></td>
               <td><%= memo_comment.user.name %></td>
               <td><%= memo_comment.created_at.strftime('%Y/%m/%d') %></td>
               <td><%= memo_comment.comment %></td>

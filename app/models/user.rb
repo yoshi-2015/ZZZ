@@ -11,4 +11,12 @@ class User < ApplicationRecord
   attachment :profile_image
   validates :name, presence: true, length: { in: 1..15 }
   validates :introduction, length: { maximum: 50 }
+
+  def self.search(search)
+    if search
+      User.where(['name LIKE?', "%#{search}%"])
+    else
+      User.all
+    end
+  end
 end
