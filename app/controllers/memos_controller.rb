@@ -3,6 +3,17 @@ class MemosController < ApplicationController
   def new
     @newmemo = Memo.new
   end
+
+  def confirm
+    @newmemo = Memo.new(memo_params)
+    return if @newmemo.valid?
+  end
+
+  def back
+    @newmemo = Memo.new(memo_params)
+    render :new
+  end
+
   def create
     @newmemo = Memo.new(memo_params)
     @newmemo.user_id = current_user.id
@@ -25,6 +36,8 @@ class MemosController < ApplicationController
     @memo = Memo.find(params[:id])
     @user = @memo.user
     @memo_comment = MemoComment.new
+
+    @commentuser = @memo.user
   end
 
   def edit

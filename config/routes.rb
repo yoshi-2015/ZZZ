@@ -5,10 +5,21 @@ Rails.application.routes.draw do
   # root 'users#show'
   resources :users
   resources :memos do
+    collection do
+    post :confirm
+    # post :new, path: :new, as: :new, action: :back
+  end
     resource :memo_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
+
+
+
   resources :homes, only: [:top ,:show]
   root to: 'homes#top'
   get '/home/about' => 'homes#show', as: :about
 end
+
+
+
+

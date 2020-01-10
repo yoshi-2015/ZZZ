@@ -40,7 +40,7 @@
             <th>カテゴリー</th>
             <th>タイトル</th>
             <th>内容詳細</th>
-            <th>イイね！</th>
+            <th><span class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></span></th>
           </tr>
         </thead>
 
@@ -60,6 +60,15 @@
                 <%= memo.body %>
               </td>
               <td>
+                <% if memo.favorited_by?(current_user) %>
+                  <%= link_to memo_favorites_path(memo), method: :delete do %>
+                    <span class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></span>
+                  <% end %>
+                <% else %>
+                  <%= link_to memo_favorites_path(memo), method: :post do %>
+                    <span class="glyphicon glyphicon-heart" aria-hidden="true" style="color: gray;"></span>
+                  <% end %>
+                <% end %>
                 <%= memo.favorites.count %> イイね！
               </td>
             </tr>

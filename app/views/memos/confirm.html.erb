@@ -1,0 +1,12 @@
+<%= @newmemo.category %>
+<%= @newmemo.title %>
+<%= @newmemo.body %>
+
+<br>
+
+<%= form_for(@newmemo, url:memos_path) do |f| %>
+  <%= f.hidden_field :category %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :body %>
+  <%= f.submit '登録する'%>
+<% end %>

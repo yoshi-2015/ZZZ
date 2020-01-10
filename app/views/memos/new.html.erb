@@ -1,0 +1,16 @@
+
+<h2>stady memo</h2>
+
+<%= form_for(@newmemo, url: confirm_memos_path) do |f| %>
+
+  <p>カテゴリー</p>
+  <%= f.text_field :category %>
+
+  <p>タイトル</p>
+  <%= f.text_field :title %>
+
+  <p>内容詳細</p>
+  <%= f.text_area :body %>
+
+  <br><%= f.submit 'Create Check Memo' %></br>
+<% end %>
