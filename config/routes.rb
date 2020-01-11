@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     post :confirm
     # post :new, path: :new, as: :new, action: :back
   end
-    resource :memo_comments, only: [:create, :destroy]
+    resources :memo_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
 
@@ -19,7 +19,3 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/home/about' => 'homes#show', as: :about
 end
-
-
-
-
