@@ -27,7 +27,7 @@
   </div>
 
   <h2>stady memo</h2>
-  <%= form_for(@newmemo, url: confirm_memos_path) do |f| %>
+  <%= form_for(@newmemo) do |f| %>
 
     <p>カテゴリー</p>
     <%= f.text_field :category %>

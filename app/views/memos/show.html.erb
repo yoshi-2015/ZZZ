@@ -52,11 +52,24 @@
         <% end %>
       <% end %>
 
+
       <br>
-      <%= form_for [@memo, @memo_comment] do |f| %>
-        <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
-        <%= f.submit "Create Comment" %>
-      <% end %>
+        <%= form_for [@memo, @memo_comment] do |f| %>
+
+          <% if @memo_comment.errors.any? %>
+            <h2><%= @memo_comment.errors.count %> errors prohibited this memo from being saved:</h2>
+
+            <ul>
+              <% @memo_comment.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          <% end %>
+
+          <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに", class: "col-xs-12" %>
+          <div class="col-xs-9"></div>
+          <%= f.submit "Create Comment", class: "col-xs-3" %>
+        <% end %>
       <br>
 
       <table class="table">
