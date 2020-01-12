@@ -2,26 +2,12 @@
 
 <div class="container">
   <div class="row">
+
     <div class="col-xs-4">
       <%= render 'memos/new', user: current_user %>
     </div>
-
     <div class="col-xs-8">
-      <h2>登録ユーザー一覧</h2>
-
-      <br>
-
-      <div>
-        <%= form_tag users_path, :method => 'get' do %>
-          <%= label_tag :name, "気になるユーザー名" %>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "検索する", :name => nil %>
-        <% end %>
-
-        <%= yield %>
-      </div>
-
-      <br>
+      <h1>フォロー一覧</h1>
 
       <table class="table">
         <thead>
@@ -57,8 +43,6 @@
               <% if current_user != user %>
                 <% if user.followed_by?(current_user) %>
                     <%=link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn smoothScroll anime_test_2" %>
-                <% else %>
-                    <%=link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn smoothScroll anime_test" %>
                 <% end %>
               <% end %>
               <!-- フォロー -->

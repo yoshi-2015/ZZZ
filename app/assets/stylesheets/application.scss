@@ -58,3 +58,78 @@
 
     font-size: 15px;
     }
+
+  /*フォローする時のボタン*/
+  .anime_test {
+      width: 150px;
+      text-align:  center;
+      font-size:  15px;
+      text-decoration: none;
+      color:  #fff;
+      background-color: #FFAD90;
+      border-radius:  5px;
+      transition: 0.5s;
+  }
+  .anime_test:hover {
+      opacity:  0.7;
+      /* width: 200px; */
+  }
+
+  /*フォロー解除する時のボタン*/
+  .anime_test_2 {
+      width: 150px;
+      text-align:  center;
+      font-size:  15px;
+      text-decoration: none;
+      color:  #fff;
+      background-color: #A4C6FF ;
+      border-radius:  5px;
+      transition: 0.5s;
+  }
+  .anime_test_2:hover {
+      opacity:  0.7;
+      /* width: 200px; */
+  }
+
+  /*カレントユーザーのフォローボタン*/
+  .anime_test_3 {
+      width: 150px;
+      text-align:  center;
+      font-size:  15px;
+      text-decoration: none;
+      color:  #fff;
+      background-color: #FFABCE;
+      border-radius:  5px;
+      transition: 0.5s;
+  }
+  .anime_test:hover {
+      opacity:  0.7;
+      /* width: 200px; */
+  }
+
+  /*ユーザー編集用のボタン*/
+  .anime_test_4 {
+      width: 150px;
+      text-align:  center;
+      font-size:  15px;
+      text-decoration: none;
+      color:  #fff;
+      background-color: #BBBBBB;
+      border-radius:  5px;
+      transition: 0.5s;
+  }
+  .anime_test:hover {
+      opacity:  0.7;
+      /* width: 200px; */
+  }
+
+  .reload-btn{
+  position:relative;
+  right: 45%;
+  bottom: 125px;
+
+  }
+
+  .text-align {
+    text-align:  center;
+  }

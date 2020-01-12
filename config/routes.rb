@@ -2,8 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # root 'users#show'
-  resources :users
+  # ネスト(入れ子)した形に変更 + フォロー一覧、フォロワー一覧の画面も用意
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+    get :follows, on: :member
+    get :followers, on: :member
+  end
+
   resources :memos do
     collection do
     post :confirm
@@ -12,8 +17,6 @@ Rails.application.routes.draw do
     resources :memo_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
-
-
 
   resources :homes, only: [:top ,:show]
   root to: 'homes#top'
