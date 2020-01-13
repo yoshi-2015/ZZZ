@@ -28,7 +28,7 @@ class MemosController < ApplicationController
 
   def index
     @newmemo = Memo.new
-    @memos = Memo.all
+    @memos = Memo.search(params[:method],params[:word])
   end
 
   def show
@@ -67,6 +67,6 @@ class MemosController < ApplicationController
 
   private
   def memo_params
-    params.require(:memo).permit(:category, :title, :body ,:user_id)
+    params.require(:memo).permit(:title, :body ,:user_id)
   end
 end

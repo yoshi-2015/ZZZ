@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show ,:edit]
   def index
     @newmemo = Memo.new
-    @users = User.search(params[:search])
+    @users = User.search(params[:method],params[:word])
   end
 
   def show

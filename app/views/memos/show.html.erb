@@ -18,7 +18,6 @@
         <thead>
           <tr>
             <th></th>
-            <th>カテゴリー</th>
             <th>タイトル</th>
             <th>内容詳細</th>
           </tr>
@@ -27,7 +26,6 @@
         <tbody>
           <tr>
             <td><%= attachment_image_tag @user,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %></td>
-            <td><%= @memo.category %></td>
             <td><%= @memo.title %></td>
             <td><%= @memo.body %></td>
             <td>

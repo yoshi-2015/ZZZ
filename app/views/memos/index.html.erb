@@ -37,7 +37,6 @@
         <thead>
           <tr>
             <th></th>
-            <th>カテゴリー</th>
             <th>タイトル</th>
             <th>内容詳細</th>
             <th><span class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></span></th>
@@ -48,9 +47,6 @@
           <% @memos.each do |memo| %>
             <tr>
               <td></td>
-              <td>
-                <%= memo.category %>
-              </td>
               <td>
                 <%= link_to memo_path(memo.id) do %>
                   <%= memo.title %>

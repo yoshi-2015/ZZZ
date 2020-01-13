@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
 
+  get 'searchs/search' => 'searchs#search', as: :search
+
   resources :homes, only: [:top ,:show]
   root to: 'homes#top'
   get '/home/about' => 'homes#show', as: :about
