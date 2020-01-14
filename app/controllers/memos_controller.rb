@@ -36,8 +36,6 @@ class MemosController < ApplicationController
     @memo = Memo.find(params[:id])
     @user = @memo.user
     @memo_comment = MemoComment.new
-
-    @commentuser = @memo.user
   end
 
   def edit

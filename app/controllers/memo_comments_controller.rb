@@ -5,7 +5,7 @@ class MemoCommentsController < ApplicationController
     @memo_comment.memo_id = @memo.id
 
     if @memo_comment.save
-      redirect_to memo_path(@memo)
+      # redirect_to memo_path(@memo)
     else
       @user = @memo.user
       @newmemo = Memo.new
@@ -14,11 +14,12 @@ class MemoCommentsController < ApplicationController
   end
 
   def destroy
+    @memo = Memo.find(params[:memo_id])
     # ページからコントローラーにコメントのIDを持ってくる・・・
     # /memos/#{@memo.id}/memo_comments/#{@memo_comment.id}/を作り上げる＝memo_comment.idを探して、デストロイさせる！！
-    comment = MemoComment.find(params[:id])
-    comment.destroy
-    redirect_back(fallback_location: root_path)
+    @comment = MemoComment.find(params[:id])
+    @comment.destroy
+    # redirect_back(fallback_location: root_path) #非同期通信の為削除
   end
 
   private

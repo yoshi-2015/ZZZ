@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
-      <%= render 'memos/new', user: @user %>
+      <%= render 'memos/new', user: @user, newmemo: @newmemo %>
     </div>
 
     <div class="col-xs-8">
@@ -35,16 +35,9 @@
                  <%= memo.body %>
               </td>
               <td>
-                <% if memo.favorited_by?(current_user) %>
-                  <%= link_to memo_favorites_path(memo), method: :delete do %>
-                    <span class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></span>
-                  <% end %>
-                <% else %>
-                  <%= link_to memo_favorites_path(memo), method: :post do %>
-                    <span class="glyphicon glyphicon-heart" aria-hidden="true" style="color: gray;"></span>
-                  <% end %>
-                <% end %>
-                <%= memo.favorites.count %> イイね！
+                <div id="likes_buttons_<%= memo.id %>">
+                  <%= render 'memos/favo', memo: memo %>
+                </div>
               </td>
             </tr>
           <% end %>

@@ -3,12 +3,11 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
-      <%= render 'memos/new', user: current_user %>
+      <%= render 'memos/new', user: current_user, newmemo: @newmemo %>
     </div>
 
     <div class="col-xs-8">
       <h2>登録ユーザー一覧</h2>
-
       <table class="table">
         <thead>
           <tr>
