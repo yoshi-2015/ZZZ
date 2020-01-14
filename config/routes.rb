@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   resources :homes, only: [:top ,:show]
   root to: 'homes#top'
   get '/home/about' => 'homes#show', as: :about
+  resources :maps, only: [:create, :index, :show, :edit, :create, :destroy]
 end

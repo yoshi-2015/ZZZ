@@ -80,3 +80,4 @@ gem 'rails-i18n'
 
 gem 'kaminari','~> 1.1.1'
 gem "font-awesome-rails"
+gem 'jcanvas-rails', '~> 0.1.0'

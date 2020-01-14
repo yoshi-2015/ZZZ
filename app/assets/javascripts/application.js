@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
-
+//= require activestorage
+//= require jcanvas
 
 $(document).ready(function () {
   $("#theTarget").skippr({
