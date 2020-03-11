@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
     get :follows, on: :member
     get :followers, on: :member
+    resource :favorites, only: [:index]
   end
 
   resources :memos do
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
     # post :new, path: :new, as: :new, action: :back
   end
     resources :memo_comments, only: [:create, :destroy]
-    resource :favorites, only: [:create, :destroy]
+    resource :favorites, only: [:index, :create, :destroy]
   end
 
   get 'searchs/search' => 'searchs#search', as: :search

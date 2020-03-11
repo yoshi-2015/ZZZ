@@ -1,4 +1,7 @@
 class FavoritesController < ApplicationController
+  def index
+    
+  end
   def create
     @memo = Memo.find(params[:memo_id])
     @favorite = current_user.favorites.new(memo_id: @memo.id)

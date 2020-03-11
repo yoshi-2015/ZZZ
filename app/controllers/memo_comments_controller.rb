@@ -3,7 +3,6 @@ class MemoCommentsController < ApplicationController
     @memo = Memo.find(params[:memo_id])
     @memo_comment = current_user.memo_comments.new(memo_comment_params)
     @memo_comment.memo_id = @memo.id
-
     if @memo_comment.save
       # redirect_to memo_path(@memo)
     else
@@ -14,6 +13,7 @@ class MemoCommentsController < ApplicationController
   end
 
   def destroy
+    # binding.pry
     @memo = Memo.find(params[:memo_id])
     # ページからコントローラーにコメントのIDを持ってくる・・・
     # /memos/#{@memo.id}/memo_comments/#{@memo_comment.id}/を作り上げる＝memo_comment.idを探して、デストロイさせる！！
@@ -24,6 +24,6 @@ class MemoCommentsController < ApplicationController
 
   private
   def memo_comment_params
-    params.require(:memo_comment).permit(:comment, :user_id, :memo_id)
+    params.require(:memo_comment).permit(:comment, :user_id, :memo_id, :rates)
   end
 end

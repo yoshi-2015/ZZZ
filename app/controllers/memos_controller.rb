@@ -36,7 +36,16 @@ class MemosController < ApplicationController
     @memo = Memo.find(params[:id])
     @user = @memo.user
     @memo_comment = MemoComment.new
+
+    comments = @memo.memo_comments
+    ratessum = 0
+    comments.each do |comment|
+      ratessum += comment.rates
+    end
+    @ave = comments.length == 0 ? 0
+    : ratessum / comments.length
   end
+
 
   def edit
     @memo = Memo.find(params[:id])

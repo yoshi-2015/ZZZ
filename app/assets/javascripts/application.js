@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
 //= require rails-ujs
-//= require bootstrap-sprockets
-//= require_tree .
-//= require activestorage
+//= require jquery
 //= require jcanvas
+//= require bootstrap-sprockets
+//= require activestorage
+//= require_tree .
 
 $(document).ready(function () {
   $("#theTarget").skippr({

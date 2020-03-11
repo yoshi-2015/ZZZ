@@ -19,6 +19,7 @@
           <tr>
             <th></th>
             <th>題名</th>
+            <th>平均点</th>
             <th>作成日時</th>
             <th>内容詳細</th>
           </tr>
@@ -28,6 +29,7 @@
           <tr>
             <td><%= attachment_image_tag @user,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %></td>
             <td><%= @memo.title %></td>
+            <td><%= @ave.round(1) %></td>
             <td><%= @memo.created_at.strftime('%Y/%m/%d') %></td>
             <td><%= @memo.body %></td>
             <td>
@@ -58,6 +60,9 @@
           </ul>
         <% end %>
 
+        <div id="rateYo"></div>
+        <%= f.hidden_field :rates, id: "score" %>
+        <br>
         <%= f.text_field :comment,placeholder: "コメントをここに", class: "col-xs-12 text_field" %>
         <div class="col-xs-9"></div>
         <%= f.submit "コメントする", class: "col-xs-3" %>
@@ -69,13 +74,24 @@
       <br>
 
       <h3>コメント一覧</h3>
-        <table class="table">
-          <tbody id="comments_index">
-            <%= render 'memos/comment', memo: @memo %>
-          </tbody>
-        </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>名前</th>
+            <th>点数</th>
+            <th>日時</th>
+            <th>コメント内容</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="comments_index">
+          <%= render 'memos/comment', memo: @memo %>
+        </tbody>
+      </table>
     </div>
   </div>
   <%= render 'headfoot/topback' %>
   <%= render 'headfoot/footer' %>
 </div>
+
